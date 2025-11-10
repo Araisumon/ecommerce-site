@@ -2,21 +2,44 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mini E-Commerce</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sumon's Shop</title>
   <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
   <header>
-    <h1>Sumon's Shop</h1>
+    <h1>🛍️ Sumon's Shop</h1>
     <div id="cart-icon">🛒 <span id="cart-count">0</span></div>
   </header>
+
+  <section class="hero">
+    <h2>Discover Unique Finds</h2>
+    <p>Affordable, handmade, and trending products just for you.</p>
+    <button onclick="scrollToProducts()">Shop Now</button>
+  </section>
+
+  <section class="search-bar">
+    <input type="text" id="search-input" placeholder="Search products..." onkeyup="searchProducts()" />
+  </section>
+
+  <section class="filters">
+    <button onclick="filterProducts('all')">All</button>
+    <button onclick="filterProducts('fashion')">Fashion</button>
+    <button onclick="filterProducts('home')">Home</button>
+    <button onclick="filterProducts('tech')">Tech</button>
+  </section>
 
   <main id="product-list"></main>
 
   <section id="cart-modal" class="hidden">
     <h2>Your Cart</h2>
     <ul id="cart-items"></ul>
+    <p>Payment Options:</p>
+    <ul>
+      <li>bKash: 01XXXXXXXXX</li>
+      <li>Nagad: 01XXXXXXXXX</li>
+    </ul>
     <button onclick="checkout()">Checkout</button>
     <button onclick="closeCart()">Close</button>
   </section>
